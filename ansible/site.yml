@@ -1,0 +1,81 @@
+---
+# Play 1 — Bootstrap Python (no gather_facts, uses raw SSH only)
+- name: Bootstrap Python 3.9
+  hosts: web
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Install build dependencies
+      ansible.builtin.raw: yum install -y gcc openssl-devel bzip2-devel libffi-devel zlib-devel wget
+
+    - name: Download Python 3.9
+      ansible.builtin.raw: test -f /tmp/Python-3.9.18.tgz || wget -q https://www.python.org/ftp/python/3.9.18/Python-3.9.18.tgz -O /tmp/Python-3.9.18.tgz
+
+    - name: Extract Python 3.9
+      ansible.builtin.raw: test -d /tmp/Python-3.9.18 || tar -xzf /tmp/Python-3.9.18.tgz -C /tmp/
+
+    - name: Build and install Python 3.9
+      ansible.builtin.raw: test -f /usr/local/bin/python3.9 || (cd /tmp/Python-3.9.18 && ./configure --enable-optimizations && make altinstall)
+
+    - name: Verify Python 3.9
+      ansible.builtin.raw: /usr/local/bin/python3.9 --version
+
+
+- name: Deploy Nginx Web Application
+  hosts: web
+  become: true
+  gather_facts: true
+
+  
+
+  vars:
+    app_port: 80
+    app_title: "Terraform + Ansible Lab"
+
+  handlers:
+    - name: restart nginx
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
+
+    - name: reload nginx
+      ansible.builtin.service:
+        name: nginx
+        state: reloaded
+
+  tasks:
+
+    - name: Install Nginx via amazon-linux-extras
+      ansible.builtin.command:
+        cmd: amazon-linux-extras install nginx1 -y
+        creates: /usr/sbin/nginx
+
+    - name: Enable and start Nginx service
+      ansible.builtin.service:
+        name: nginx
+        enabled: true
+        state: started
+
+    - name: Deploy web application index page
+      ansible.builtin.template:
+        src: templates/index.html.j2
+        dest: /usr/share/nginx/html/index.html
+        owner: root
+        group: root
+        mode: "0644"
+      notify: reload nginx
+
+    - name: Verify Nginx responds on localhost
+      ansible.builtin.uri:
+        url: "http://localhost:{{ app_port }}"
+        return_content: true
+        status_code: 200
+      register: nginx_check
+      retries: 5
+      delay: 5
+      until: nginx_check.status == 200
+
+    - name: Print verification result
+      ansible.builtin.debug:
+        msg: "✅ Nginx is up — HTTP {{ nginx_check.status }} received."

@@ -1,0 +1,330 @@
+[0m[1mtls_private_key.web_key: Refreshing state... [id=8c5aebe64469e6efdb3a40a093efc3c1b4dd0cc1][0m
+[0m[1mlocal_sensitive_file.private_key: Refreshing state... [id=bb3e58b03080b75da850edf9be8a50cc40c771b1][0m
+[0m[1mdata.aws_ami.amazon_linux_2: Reading...[0m[0m
+[0m[1maws_key_pair.web_key: Refreshing state... [id=webapp-lab-key][0m
+[0m[1maws_security_group.web_sg: Refreshing state... [id=sg-03a9e7a24e589a55e][0m
+[0m[1maws_vpc_security_group_egress_rule.all_outbound: Refreshing state... [id=sgr-0d42b56188e640622][0m
+[0m[1maws_vpc_security_group_ingress_rule.ssh: Refreshing state... [id=sgr-0f01366def80c530e][0m
+[0m[1maws_vpc_security_group_ingress_rule.http: Refreshing state... [id=sgr-0c27b89d840bc477f][0m
+[0m[1mdata.aws_ami.amazon_linux_2: Read complete after 2s [id=ami-0622c21dd3d2b1075][0m
+[0m[1maws_instance.web: Refreshing state... [id=i-0dda26e7b7d058f80][0m
+[0m[1mlocal_file.ansible_inventory: Refreshing state... [id=d18715e230ecd4a261c57363e766bbe544746e76][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [31m-[0m destroy[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_instance.web[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_instance" "web" {
+      [31m-[0m[0m ami                                  = "ami-0622c21dd3d2b1075" [90m-> null[0m[0m
+      [31m-[0m[0m arn                                  = "arn:aws:ec2:us-east-1:673588459780:instance/i-0dda26e7b7d058f80" [90m-> null[0m[0m
+      [31m-[0m[0m associate_public_ip_address          = true [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone                    = "us-east-1f" [90m-> null[0m[0m
+      [31m-[0m[0m cpu_core_count                       = 1 [90m-> null[0m[0m
+      [31m-[0m[0m cpu_threads_per_core                 = 2 [90m-> null[0m[0m
+      [31m-[0m[0m disable_api_stop                     = false [90m-> null[0m[0m
+      [31m-[0m[0m disable_api_termination              = false [90m-> null[0m[0m
+      [31m-[0m[0m ebs_optimized                        = false [90m-> null[0m[0m
+      [31m-[0m[0m get_password_data                    = false [90m-> null[0m[0m
+      [31m-[0m[0m hibernation                          = false [90m-> null[0m[0m
+      [31m-[0m[0m id                                   = "i-0dda26e7b7d058f80" [90m-> null[0m[0m
+      [31m-[0m[0m instance_initiated_shutdown_behavior = "stop" [90m-> null[0m[0m
+      [31m-[0m[0m instance_state                       = "running" [90m-> null[0m[0m
+      [31m-[0m[0m instance_type                        = "t3.micro" [90m-> null[0m[0m
+      [31m-[0m[0m ipv6_address_count                   = 0 [90m-> null[0m[0m
+      [31m-[0m[0m ipv6_addresses                       = [] [90m-> null[0m[0m
+      [31m-[0m[0m key_name                             = "webapp-lab-key" [90m-> null[0m[0m
+      [31m-[0m[0m monitoring                           = false [90m-> null[0m[0m
+      [31m-[0m[0m placement_partition_number           = 0 [90m-> null[0m[0m
+      [31m-[0m[0m primary_network_interface_id         = "eni-038e0af4c544d2567" [90m-> null[0m[0m
+      [31m-[0m[0m private_dns                          = "ip-172-31-74-224.ec2.internal" [90m-> null[0m[0m
+      [31m-[0m[0m private_ip                           = "172.31.74.224" [90m-> null[0m[0m
+      [31m-[0m[0m public_dns                           = "ec2-34-238-189-224.compute-1.amazonaws.com" [90m-> null[0m[0m
+      [31m-[0m[0m public_ip                            = "34.238.189.224" [90m-> null[0m[0m
+      [31m-[0m[0m secondary_private_ips                = [] [90m-> null[0m[0m
+      [31m-[0m[0m security_groups                      = [
+          [31m-[0m[0m "webapp-lab-sg",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m source_dest_check                    = true [90m-> null[0m[0m
+      [31m-[0m[0m subnet_id                            = "subnet-029bfe74a5a1c4d61" [90m-> null[0m[0m
+      [31m-[0m[0m tags                                 = {
+          [31m-[0m[0m "Name"    = "webapp-lab-web"
+          [31m-[0m[0m "Project" = "webapp-lab"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                             = {
+          [31m-[0m[0m "Name"    = "webapp-lab-web"
+          [31m-[0m[0m "Project" = "webapp-lab"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tenancy                              = "default" [90m-> null[0m[0m
+      [31m-[0m[0m user_data_replace_on_change          = false [90m-> null[0m[0m
+      [31m-[0m[0m vpc_security_group_ids               = [
+          [31m-[0m[0m "sg-03a9e7a24e589a55e",
+        ] [90m-> null[0m[0m
+        [90m# (7 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m capacity_reservation_specification {
+          [31m-[0m[0m capacity_reservation_preference = "open" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m cpu_options {
+          [31m-[0m[0m core_count       = 1 [90m-> null[0m[0m
+          [31m-[0m[0m threads_per_core = 2 [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+
+      [31m-[0m[0m credit_specification {
+          [31m-[0m[0m cpu_credits = "unlimited" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m enclave_options {
+          [31m-[0m[0m enabled = false [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m maintenance_options {
+          [31m-[0m[0m auto_recovery = "default" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m metadata_options {
+          [31m-[0m[0m http_endpoint               = "enabled" [90m-> null[0m[0m
+          [31m-[0m[0m http_protocol_ipv6          = "disabled" [90m-> null[0m[0m
+          [31m-[0m[0m http_put_response_hop_limit = 1 [90m-> null[0m[0m
+          [31m-[0m[0m http_tokens                 = "optional" [90m-> null[0m[0m
+          [31m-[0m[0m instance_metadata_tags      = "disabled" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m private_dns_name_options {
+          [31m-[0m[0m enable_resource_name_dns_a_record    = false [90m-> null[0m[0m
+          [31m-[0m[0m enable_resource_name_dns_aaaa_record = false [90m-> null[0m[0m
+          [31m-[0m[0m hostname_type                        = "ip-name" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m root_block_device {
+          [31m-[0m[0m delete_on_termination = true [90m-> null[0m[0m
+          [31m-[0m[0m device_name           = "/dev/xvda" [90m-> null[0m[0m
+          [31m-[0m[0m encrypted             = false [90m-> null[0m[0m
+          [31m-[0m[0m iops                  = 100 [90m-> null[0m[0m
+          [31m-[0m[0m tags                  = {} [90m-> null[0m[0m
+          [31m-[0m[0m tags_all              = {} [90m-> null[0m[0m
+          [31m-[0m[0m throughput            = 0 [90m-> null[0m[0m
+          [31m-[0m[0m volume_id             = "vol-0fb4ca664b79dd965" [90m-> null[0m[0m
+          [31m-[0m[0m volume_size           = 8 [90m-> null[0m[0m
+          [31m-[0m[0m volume_type           = "gp2" [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+    }
+
+[1m  # aws_key_pair.web_key[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_key_pair" "web_key" {
+      [31m-[0m[0m arn             = "arn:aws:ec2:us-east-1:673588459780:key-pair/webapp-lab-key" [90m-> null[0m[0m
+      [31m-[0m[0m fingerprint     = "78:9b:4f:99:23:71:8e:47:1c:e1:82:44:9d:10:53:06" [90m-> null[0m[0m
+      [31m-[0m[0m id              = "webapp-lab-key" [90m-> null[0m[0m
+      [31m-[0m[0m key_name        = "webapp-lab-key" [90m-> null[0m[0m
+      [31m-[0m[0m key_pair_id     = "key-0ce0629aaca6fb642" [90m-> null[0m[0m
+      [31m-[0m[0m key_type        = "rsa" [90m-> null[0m[0m
+      [31m-[0m[0m public_key      = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCgxv1mA5NmkO7bey8MEhDSo9RYtbEBmPUL3I4X5Gc+3bXdGVaaKQgjGYSDbxP+coU0D1kfRM3PhndtiVFK0urJ7wFVWadKwzTp64TI31u0nh0tqN1i+dkAPekZhM5j89R3B3N1385mt+BZV+7O5wljB/4FobHYsFZ0UNngbOYfx9yb2ic6tnigowXQ09Z0pKy5FwdAZbtTXmIxQH23OrQlnsWiTl58B+JYdpW+CFy8/ctxxmAbCfDGOGMD6DpqUYIogVyR54xMdaKECb0OnuB8aoDfaI1ibWn3fMm/tWKDY3vKXEGu0JhmpgaSXbBtgR64OKBp0E9rA0/aAjShykwETD/rqE8KjEGhrFc1/EzowC8nqyZqBECMmU+FAitBbGwjEameVLQpRrNZj91T9dI4trQ1ykfCLRS+4D+aVyKZTKRGxW684juZ8DLIzkAo3gh2N3CprExv0m2Pp0nUIU7ZpSTOd545qj2al4L9uAzjp8jK1BTQyT+D+XXEI+uoBWVU8fYoXu1kAEuNw3O1t5HyA41FpFtJVhx+SNFroChcV4OQvyt0qUbbbxvFB0iKoXRC+AKOlwz13E7fzJbvjqdCyRPtAcDvU1rUrFs+OBRhIqOmCZ8Ijem+Fw872SLG/LX9ZVWGV30LZGMStJ7UOR9hq5ar1nNBJ+Ocll9CDiYSQQ==" [90m-> null[0m[0m
+      [31m-[0m[0m tags            = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all        = {} [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_security_group.web_sg[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_security_group" "web_sg" {
+      [31m-[0m[0m arn                    = "arn:aws:ec2:us-east-1:673588459780:security-group/sg-03a9e7a24e589a55e" [90m-> null[0m[0m
+      [31m-[0m[0m description            = "Web server security group HTTP and SSH" [90m-> null[0m[0m
+      [31m-[0m[0m egress                 = [
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = [
+                  [31m-[0m[0m "0.0.0.0/0",
+                ]
+              [31m-[0m[0m description      = "Allow all outbound"
+              [31m-[0m[0m from_port        = 0
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "-1"
+              [31m-[0m[0m security_groups  = []
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 0
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "sg-03a9e7a24e589a55e" [90m-> null[0m[0m
+      [31m-[0m[0m ingress                = [
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = [
+                  [31m-[0m[0m "0.0.0.0/0",
+                ]
+              [31m-[0m[0m description      = "HTTP from anywhere"
+              [31m-[0m[0m from_port        = 80
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "tcp"
+              [31m-[0m[0m security_groups  = []
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 80
+            },
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = [
+                  [31m-[0m[0m "0.0.0.0/0",
+                ]
+              [31m-[0m[0m description      = "SSH from anywhere"
+              [31m-[0m[0m from_port        = 22
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "tcp"
+              [31m-[0m[0m security_groups  = []
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 22
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m name                   = "webapp-lab-sg" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id               = "673588459780" [90m-> null[0m[0m
+      [31m-[0m[0m revoke_rules_on_delete = false [90m-> null[0m[0m
+      [31m-[0m[0m tags                   = {
+          [31m-[0m[0m "Name"    = "webapp-lab-sg"
+          [31m-[0m[0m "Project" = "webapp-lab"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all               = {
+          [31m-[0m[0m "Name"    = "webapp-lab-sg"
+          [31m-[0m[0m "Project" = "webapp-lab"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                 = "vpc-09cbfa526234c0a6c" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_vpc_security_group_egress_rule.all_outbound[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_vpc_security_group_egress_rule" "all_outbound" {
+      [31m-[0m[0m arn                    = "arn:aws:ec2:us-east-1:673588459780:security-group-rule/sgr-0d42b56188e640622" [90m-> null[0m[0m
+      [31m-[0m[0m cidr_ipv4              = "0.0.0.0/0" [90m-> null[0m[0m
+      [31m-[0m[0m description            = "Allow all outbound" [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "sgr-0d42b56188e640622" [90m-> null[0m[0m
+      [31m-[0m[0m ip_protocol            = "-1" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_id      = "sg-03a9e7a24e589a55e" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_rule_id = "sgr-0d42b56188e640622" [90m-> null[0m[0m
+      [31m-[0m[0m tags_all               = {} [90m-> null[0m[0m
+    }
+
+[1m  # aws_vpc_security_group_ingress_rule.http[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_vpc_security_group_ingress_rule" "http" {
+      [31m-[0m[0m arn                    = "arn:aws:ec2:us-east-1:673588459780:security-group-rule/sgr-0c27b89d840bc477f" [90m-> null[0m[0m
+      [31m-[0m[0m cidr_ipv4              = "0.0.0.0/0" [90m-> null[0m[0m
+      [31m-[0m[0m description            = "HTTP from anywhere" [90m-> null[0m[0m
+      [31m-[0m[0m from_port              = 80 [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "sgr-0c27b89d840bc477f" [90m-> null[0m[0m
+      [31m-[0m[0m ip_protocol            = "tcp" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_id      = "sg-03a9e7a24e589a55e" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_rule_id = "sgr-0c27b89d840bc477f" [90m-> null[0m[0m
+      [31m-[0m[0m tags_all               = {} [90m-> null[0m[0m
+      [31m-[0m[0m to_port                = 80 [90m-> null[0m[0m
+    }
+
+[1m  # aws_vpc_security_group_ingress_rule.ssh[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_vpc_security_group_ingress_rule" "ssh" {
+      [31m-[0m[0m arn                    = "arn:aws:ec2:us-east-1:673588459780:security-group-rule/sgr-0f01366def80c530e" [90m-> null[0m[0m
+      [31m-[0m[0m cidr_ipv4              = "0.0.0.0/0" [90m-> null[0m[0m
+      [31m-[0m[0m description            = "SSH from anywhere" [90m-> null[0m[0m
+      [31m-[0m[0m from_port              = 22 [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "sgr-0f01366def80c530e" [90m-> null[0m[0m
+      [31m-[0m[0m ip_protocol            = "tcp" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_id      = "sg-03a9e7a24e589a55e" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_rule_id = "sgr-0f01366def80c530e" [90m-> null[0m[0m
+      [31m-[0m[0m tags_all               = {} [90m-> null[0m[0m
+      [31m-[0m[0m to_port                = 22 [90m-> null[0m[0m
+    }
+
+[1m  # local_file.ansible_inventory[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "local_file" "ansible_inventory" {
+      [31m-[0m[0m content              = <<-EOT
+            [web]
+            34.238.189.224 ansible_user=ec2-user ansible_ssh_private_key_file=/Users/furaha/terraform-ansible/webapp-lab-key.pem ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+        EOT [90m-> null[0m[0m
+      [31m-[0m[0m content_base64sha256 = "vpSFBSd4H11ODWyp4MLJjNHHBwzrntDuxf+E6QvAqEE=" [90m-> null[0m[0m
+      [31m-[0m[0m content_base64sha512 = "fmwss7Z9Ii0yhtys4Qa+JiSi0UnHpGswbCIydF17DP6/22lMA4egz/uUpo4vekTcwIiUQMRNKbWSUO+QlCSOsQ==" [90m-> null[0m[0m
+      [31m-[0m[0m content_md5          = "dba7c7efa238f4932b4ef80c3e3d90a3" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha1         = "d18715e230ecd4a261c57363e766bbe544746e76" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha256       = "be94850527781f5d4e0d6ca9e0c2c98cd1c7070ceb9ed0eec5ff84e90bc0a841" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha512       = "7e6c2cb3b67d222d3286dcace106be2624a2d149c7a46b306c2232745d7b0cfebfdb694c0387a0cffb94a68e2f7a44dcc0889440c44d29b59250ef9094248eb1" [90m-> null[0m[0m
+      [31m-[0m[0m directory_permission = "0777" [90m-> null[0m[0m
+      [31m-[0m[0m file_permission      = "0777" [90m-> null[0m[0m
+      [31m-[0m[0m filename             = "./../ansible/inventory.ini" [90m-> null[0m[0m
+      [31m-[0m[0m id                   = "d18715e230ecd4a261c57363e766bbe544746e76" [90m-> null[0m[0m
+    }
+
+[1m  # local_sensitive_file.private_key[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "local_sensitive_file" "private_key" {
+      [31m-[0m[0m content              = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m content_base64sha256 = "72cR6sgacnLnVs3ox5B1zS02eOSg757whVL7ivghBeI=" [90m-> null[0m[0m
+      [31m-[0m[0m content_base64sha512 = "G/YsCA38aXrYDV1f1RCHpUACVgT25p9nuWKB872M0pBHv8TIEiEIe/QjZZJkPgdjDXsnto6vdL032u3mCPpcPQ==" [90m-> null[0m[0m
+      [31m-[0m[0m content_md5          = "ee1e163fef65eba9a5e532576c989aa7" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha1         = "bb3e58b03080b75da850edf9be8a50cc40c771b1" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha256       = "ef6711eac81a7272e756cde8c79075cd2d3678e4a0ef9ef08552fb8af82105e2" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha512       = "1bf62c080dfc697ad80d5d5fd51087a540025604f6e69f67b96281f3bd8cd29047bfc4c81221087bf4236592643e07630d7b27b68eaf74bd37daede608fa5c3d" [90m-> null[0m[0m
+      [31m-[0m[0m directory_permission = "0700" [90m-> null[0m[0m
+      [31m-[0m[0m file_permission      = "0400" [90m-> null[0m[0m
+      [31m-[0m[0m filename             = "./../webapp-lab-key.pem" [90m-> null[0m[0m
+      [31m-[0m[0m id                   = "bb3e58b03080b75da850edf9be8a50cc40c771b1" [90m-> null[0m[0m
+    }
+
+[1m  # tls_private_key.web_key[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "tls_private_key" "web_key" {
+      [31m-[0m[0m algorithm                     = "RSA" [90m-> null[0m[0m
+      [31m-[0m[0m ecdsa_curve                   = "P224" [90m-> null[0m[0m
+      [31m-[0m[0m id                            = "8c5aebe64469e6efdb3a40a093efc3c1b4dd0cc1" [90m-> null[0m[0m
+      [31m-[0m[0m private_key_openssh           = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m private_key_pem               = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m private_key_pem_pkcs8         = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m public_key_fingerprint_md5    = "93:d5:a8:b7:95:3d:bd:95:c1:8f:c7:dd:33:d1:0c:44" [90m-> null[0m[0m
+      [31m-[0m[0m public_key_fingerprint_sha256 = "SHA256:H2m2iofPhmFTWaz1Tyk8VIvX36+jVM/MRxtXvNeI7ng" [90m-> null[0m[0m
+      [31m-[0m[0m public_key_openssh            = <<-EOT
+            ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCgxv1mA5NmkO7bey8MEhDSo9RYtbEBmPUL3I4X5Gc+3bXdGVaaKQgjGYSDbxP+coU0D1kfRM3PhndtiVFK0urJ7wFVWadKwzTp64TI31u0nh0tqN1i+dkAPekZhM5j89R3B3N1385mt+BZV+7O5wljB/4FobHYsFZ0UNngbOYfx9yb2ic6tnigowXQ09Z0pKy5FwdAZbtTXmIxQH23OrQlnsWiTl58B+JYdpW+CFy8/ctxxmAbCfDGOGMD6DpqUYIogVyR54xMdaKECb0OnuB8aoDfaI1ibWn3fMm/tWKDY3vKXEGu0JhmpgaSXbBtgR64OKBp0E9rA0/aAjShykwETD/rqE8KjEGhrFc1/EzowC8nqyZqBECMmU+FAitBbGwjEameVLQpRrNZj91T9dI4trQ1ykfCLRS+4D+aVyKZTKRGxW684juZ8DLIzkAo3gh2N3CprExv0m2Pp0nUIU7ZpSTOd545qj2al4L9uAzjp8jK1BTQyT+D+XXEI+uoBWVU8fYoXu1kAEuNw3O1t5HyA41FpFtJVhx+SNFroChcV4OQvyt0qUbbbxvFB0iKoXRC+AKOlwz13E7fzJbvjqdCyRPtAcDvU1rUrFs+OBRhIqOmCZ8Ijem+Fw872SLG/LX9ZVWGV30LZGMStJ7UOR9hq5ar1nNBJ+Ocll9CDiYSQQ==
+        EOT [90m-> null[0m[0m
+      [31m-[0m[0m public_key_pem                = <<-EOT
+            -----BEGIN PUBLIC KEY-----
+            MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoMb9ZgOTZpDu23svDBIQ
+            0qPUWLWxAZj1C9yOF+RnPt213RlWmikIIxmEg28T/nKFNA9ZH0TNz4Z3bYlRStLq
+            ye8BVVmnSsM06euEyN9btJ4dLajdYvnZAD3pGYTOY/PUdwdzdd/OZrfgWVfuzucJ
+            Ywf+BaGx2LBWdFDZ4GzmH8fcm9onOrZ4oKMF0NPWdKSsuRcHQGW7U15iMUB9tzq0
+            JZ7Fok5efAfiWHaVvghcvP3LccZgGwnwxjhjA+g6alGCKIFckeeMTHWihAm9Dp7g
+            fGqA32iNYm1p93zJv7Vig2N7ylxBrtCYZqYGkl2wbYEeuDigadBPawNP2gI0ocpM
+            BEw/66hPCoxBoaxXNfxM6MAvJ6smagRAjJlPhQIrQWxsIxGpnlS0KUazWY/dU/XS
+            OLa0NcpHwi0UvuA/mlcimUykRsVuvOI7mfAyyM5AKN4IdjdwqaxMb9Jtj6dJ1CFO
+            2aUkzneeOao9mpeC/bgM46fIytQU0Mk/g/l1xCPrqAVlVPH2KF7tZABLjcNztbeR
+            8gONRaRbSVYcfkjRa6AoXFeDkL8rdKlG228bxQdIiqF0QvgCjpcM9dxO38yW746n
+            QskT7QHA71Na1KxbPjgUYSKjpgmfCI3pvhcPO9kixvy1/WVVhld9C2RjErSe1Dkf
+            YauWq9ZzQSfjnJZfQg4mEkECAwEAAQ==
+            -----END PUBLIC KEY-----
+        EOT [90m-> null[0m[0m
+      [31m-[0m[0m rsa_bits                      = 4096 [90m-> null[0m[0m
+    }
+
+[1mPlan:[0m [0m0 to add, 0 to change, 9 to destroy.
+
+Changes to Outputs:
+  [31m-[0m[0m instance_public_dns = "ec2-34-238-189-224.compute-1.amazonaws.com" [90m-> null[0m[0m
+  [31m-[0m[0m instance_public_ip  = "34.238.189.224" [90m-> null[0m[0m
+  [31m-[0m[0m key_name            = "webapp-lab-key" [90m-> null[0m[0m
+  [31m-[0m[0m private_key_path    = "/Users/furaha/terraform-ansible/webapp-lab-key.pem" [90m-> null[0m[0m
+  [31m-[0m[0m ssh_connect_command = "ssh -i /Users/furaha/terraform-ansible/webapp-lab-key.pem ec2-user@34.238.189.224" [90m-> null[0m[0m
+  [31m-[0m[0m ssh_user            = "ec2-user" [90m-> null[0m[0m
+[0m[1mlocal_file.ansible_inventory: Destroying... [id=d18715e230ecd4a261c57363e766bbe544746e76][0m[0m
+[0m[1mlocal_file.ansible_inventory: Destruction complete after 0s[0m
+[0m[1mlocal_sensitive_file.private_key: Destroying... [id=bb3e58b03080b75da850edf9be8a50cc40c771b1][0m[0m
+[0m[1mlocal_sensitive_file.private_key: Destruction complete after 0s[0m
+[0m[1maws_vpc_security_group_egress_rule.all_outbound: Destroying... [id=sgr-0d42b56188e640622][0m[0m
+[0m[1maws_vpc_security_group_ingress_rule.ssh: Destroying... [id=sgr-0f01366def80c530e][0m[0m
+[0m[1maws_vpc_security_group_ingress_rule.http: Destroying... [id=sgr-0c27b89d840bc477f][0m[0m
+[0m[1maws_instance.web: Destroying... [id=i-0dda26e7b7d058f80][0m[0m
+[0m[1maws_vpc_security_group_egress_rule.all_outbound: Destruction complete after 1s[0m
+[0m[1maws_vpc_security_group_ingress_rule.ssh: Destruction complete after 1s[0m
+[0m[1maws_vpc_security_group_ingress_rule.http: Destruction complete after 1s[0m
+[0m[1maws_instance.web: Still destroying... [id=i-0dda26e7b7d058f80, 00m10s elapsed][0m[0m
+[0m[1maws_instance.web: Still destroying... [id=i-0dda26e7b7d058f80, 00m20s elapsed][0m[0m
+[0m[1maws_instance.web: Destruction complete after 22s[0m
+[0m[1maws_key_pair.web_key: Destroying... [id=webapp-lab-key][0m[0m
+[0m[1maws_security_group.web_sg: Destroying... [id=sg-03a9e7a24e589a55e][0m[0m
+[0m[1maws_key_pair.web_key: Destruction complete after 1s[0m
+[0m[1mtls_private_key.web_key: Destroying... [id=8c5aebe64469e6efdb3a40a093efc3c1b4dd0cc1][0m[0m
+[0m[1mtls_private_key.web_key: Destruction complete after 0s[0m
+[0m[1maws_security_group.web_sg: Destruction complete after 2s[0m
+[0m[1m[32m
+Destroy complete! Resources: 9 destroyed.[0m
